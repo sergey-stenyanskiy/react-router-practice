@@ -1,14 +1,22 @@
 import React from 'react'
 
-import Home from './Home'
-
 import {
   Route,
   Routes
 } from 'react-router-dom'
 
-export default () => (
+import { ViewModel } from '../types/types'
+
+import Home from './Home'
+
+type MainViewProps = {
+  viewModel: ViewModel
+}
+
+export default ({
+  viewModel
+}: MainViewProps) => (
   <Routes>
-    <Route path="/" element={<Home />} />
+    <Route path="/" element={<Home viewModel={viewModel} />} />
   </Routes>
 )
