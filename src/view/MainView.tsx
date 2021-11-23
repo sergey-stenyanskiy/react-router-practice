@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import {
   Route,
@@ -6,23 +6,25 @@ import {
   Navigate
 } from 'react-router-dom'
 
-import { ViewModel } from '../types/types'
+import useViewModel from '../useViewModel'
 
 import Home from './Home'
 import ImageInfo from './ImageInfo'
 import NotFound from './NotFound'
 
-type MainViewProps = {
-  viewModel: ViewModel
-}
+export default () => {
+  const viewModel = useViewModel();
+  const { fetchImages } = viewModel;
 
-export default ({
-  viewModel
-}: MainViewProps) => (
-  <Routes>
-    <Route path="/" element={<Home viewModel={viewModel} />} />
-    <Route path="/images" element={<Navigate replace to="/" />} />
-    <Route path="/images/:id" element={<ImageInfo />} />
-    <Route path="*" element={<NotFound />} />
-  </Routes>
-)
+  useEffect(() => {
+    fetchImages();
+  }, [fetchImages]);
+
+  return (
+    <Routes>
+      <Route path="/" element={<Home viewModel={viewModel} />} />
+      <Route path="/images/:id" element={<ImageInfo viewModel={viewModel} />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  )
+}
