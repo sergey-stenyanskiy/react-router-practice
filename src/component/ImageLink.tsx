@@ -33,6 +33,7 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: center;
+flex: 0 0 33.33%;
 
 padding: 8px;
 
@@ -47,8 +48,8 @@ ${ButtonMore} {
 `;
 
 const Image = styled.div`
-width: 150px;
-height: 150px;
+width: 100%;
+height: 200px;
 background: url(${(props: ImageStyleProps) => props.url});
 `;
 

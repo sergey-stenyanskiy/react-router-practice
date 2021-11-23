@@ -24,7 +24,7 @@ display: block;
 color: black;
 text-decoration: none;
 padding: 4px 16px;
-width: 142px;
+width: 164px;
 
 border-radius: 4px;
 text-align: center;
@@ -42,8 +42,6 @@ transition: box-shadow, 0.1s linear;
 &.active {
   transition: box-shadow, 0.1s linear;
   box-shadow: 0 0 4px 2px rgba(0,0,0,0.2);
-
-  font-weight: 700;
 }
 `;
 
