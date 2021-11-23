@@ -12,6 +12,7 @@ import useViewModel from '../useViewModel'
 
 import LoginGuard from '../component/LoginGuard'
 import Navigation from '../component/Navigation'
+import Header from '../component/Header'
 
 import Home from './Home'
 import ImageInfo from './ImageInfo'
@@ -40,7 +41,7 @@ export default () => {
 
   return (
     <>
-      <Navigation />
+      <Header />
       <Routes>
         <Route path="/" element={<Home viewModel={viewModel} />} />
         <Route path="/images/:id" element={<ImageInfo viewModel={viewModel} />} />
