@@ -32,7 +32,8 @@
    "jsx-a11y/no-noninteractive-element-interactions": "off",
    "react/no-unused-prop-types": "off",
    "react/function-component-definition": "off",
-   "arrow-body-style": "off"
+   "arrow-body-style": "off",
+   "no-restricted-syntax": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json",
