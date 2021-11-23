@@ -23,7 +23,7 @@ import useLogin from '../hook/useLogin'
 
 export default () => {
   const viewModel = useViewModel();
-  const { logged, login, logout } = useLogin(false);
+  const login = useLogin(false);
 
   const { fetchImages } = viewModel;
 
@@ -31,31 +31,22 @@ export default () => {
     fetchImages();
   }, [fetchImages]);
 
-  const handleLoginClicked = useCallback(() => {
-    if (!logged) {
-      login();
-    } else {
-      logout();
-    }
-  }, [logged, login, logout]);
-
   return (
     <>
-      <Header />
+      <Header auth={login} />
       <Routes>
         <Route path="/" element={<Home viewModel={viewModel} />} />
         <Route path="/images/:id" element={<ImageInfo viewModel={viewModel} />} />
         <Route
           path="/sensitive-content"
           element={(
-            <LoginGuard logged={logged}>
+            <LoginGuard logged={login.logged}>
               <PrivatePage />
             </LoginGuard>
           )}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <button type="button" onClick={handleLoginClicked}>{logged ? 'Log out' : 'Log in'}</button>
     </>
   )
 }

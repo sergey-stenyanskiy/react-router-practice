@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 import { ReactComponent as Key } from '../assets/icons/key.svg'
 
-import { primary } from '../appTheme'
+import { primary, danger } from '../appTheme'
 
 import FilledButton from './FilledButton'
 import Navigation from './Navigation'
 
 import styled from 'styled-components'
+import { UseLoginController } from '../types/types'
 
 const Header = styled.header`
 display: flex;
@@ -31,14 +32,30 @@ const HorizontalSpacing = styled.div`
 margin-right: ${({ spacing = 1 } : HorizontalSpacingProps) => `${spacing * 8}px`};
 `;
 
-export default () => {
+type HeaderProps = {
+  auth: UseLoginController
+}
+
+export default ({
+  auth
+}: HeaderProps) => {
+  const theme = auth.logged ? danger : primary;
+
+  const handleLoginClicked = useCallback(() => {
+    if (!auth.logged) {
+      auth.login();
+    } else {
+      auth.logout();
+    }
+  }, [auth]);
+
   return (
     <Header>
       <Navigation />
-      <FilledButton type="button" theme={primary}>
+      <FilledButton type="button" theme={theme} onClick={handleLoginClicked}>
         <StyledKey />
         <HorizontalSpacing />
-        Log in
+        {auth.logged ? 'Log out' : 'Log in'}
       </FilledButton>
     </Header>
   )
