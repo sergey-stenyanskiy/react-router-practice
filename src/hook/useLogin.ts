@@ -1,6 +1,8 @@
 import { useCallback, useState } from 'react'
 
-export default function useLogin(initialState: boolean) {
+import { UseLoginController } from '../types/types';
+
+export default function useLogin(initialState: boolean): UseLoginController {
   const [logged, setLogged] = useState(initialState);
 
   const login = useCallback(() => {

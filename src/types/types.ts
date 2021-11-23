@@ -30,6 +30,12 @@ export type FilledButtonVariantColorsType = {
   primary: '#42A5F5'
 }
 
+export type UseLoginController = {
+  logged: boolean
+  login: () => void
+  logout: () => void
+}
+
 export type FilledButtonTheme = {
   color: FilledButtonVariant
 }
