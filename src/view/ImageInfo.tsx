@@ -8,6 +8,8 @@ import { ViewModel } from '../types/types';
 
 import NotFound from './NotFound';
 
+import ImageInfoCard from '../component/ImageInfoCard'
+
 type ImageInfoProps = {
   viewModel: ViewModel
 }
@@ -27,6 +29,6 @@ export default ({
   }
 
   return (
-    <>{image.url}</>
+    <ImageInfoCard image={image} />
   );
 }
