@@ -6,8 +6,20 @@ import {
 
 import MainView from './view/MainView'
 
-export default () => (
-  <Router>
-    <MainView />
-  </Router>
-)
+import styled from 'styled-components'
+
+const App = styled.div`
+width: 800px;
+margin: auto;
+font-family: arial;
+`;
+
+export default () => {
+  return (
+    <App>
+      <Router>
+        <MainView />
+      </Router>
+    </App>
+  )
+}
