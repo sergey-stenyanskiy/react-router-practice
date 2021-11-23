@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ImageType } from '../types/types'
 
-import Image from './Image'
+import ImageLink from './ImageLink'
 
 import styled from 'styled-components'
 
@@ -20,6 +20,6 @@ export default ({
   images
 }: ImageListProps) => (
   <ImageList>
-    {images.map((image) => <Image image={image} />)}
+    {images.map((image) => <ImageLink image={image} />)}
   </ImageList>
 )
