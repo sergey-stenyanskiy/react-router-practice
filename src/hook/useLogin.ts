@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
 
-export default function useLogin() {
-  const [logged, setLogged] = useState(false);
+export default function useLogin(initialState: boolean) {
+  const [logged, setLogged] = useState(initialState);
 
   const login = useCallback(() => {
     setTimeout(() => {
