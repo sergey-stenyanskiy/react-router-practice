@@ -4,6 +4,7 @@ import { ImageType, ImageData, ViewModel, ViewModelState, ViewModelActions } fro
 
 import axios from 'axios'
 
+// TODO перенести в отдельную папку hooks
 export default function useViewModel(initialState: ViewModelState = []): ViewModel {
   const [images, setImages] = useState(initialState);
   const [loaded, setLoaded] = useState(false);
@@ -39,18 +40,12 @@ export default function useViewModel(initialState: ViewModelState = []): ViewMod
     return images.find((img) => id === img.id) ?? null;
   }, [images]);
 
-  const actions: ViewModelActions = useMemo(() => {
-    return {
-      setImage,
-      getImage,
-      setImages,
-      fetchImages,
-    }
-  }, [setImage, getImage, setImages, fetchImages]);
-
   return {
     images,
     loaded,
-    ...actions
+    setImage,
+    getImage,
+    setImages,
+    fetchImages
   }
 }
