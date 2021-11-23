@@ -33,7 +33,13 @@
    "react/no-unused-prop-types": "off",
    "react/function-component-definition": "off",
    "arrow-body-style": "off",
-   "no-restricted-syntax": "off"
+   "no-restricted-syntax": "off",
+   "react/jsx-no-useless-fragment": [
+     "error",
+      {
+        "allowExpressions": true
+      }
+    ]
   },
   "parserOptions": {
     "project": "./tsconfig.json",
