@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react'
 
-import { ImageType, ImageData, ViewModel, ViewModelState } from './types/types'
+import { ImageType, ImageData, ViewModel, ViewModelState, ViewModelActions } from './types/types'
 
 import axios from 'axios'
 
@@ -39,7 +39,7 @@ export default function useViewModel(initialState: ViewModelState = []): ViewMod
     return images.find((img) => id === img.id) ?? null;
   }, [images]);
 
-  const actions = useMemo(() => {
+  const actions: ViewModelActions = useMemo(() => {
     return {
       setImage,
       getImage,
@@ -51,6 +51,6 @@ export default function useViewModel(initialState: ViewModelState = []): ViewMod
   return {
     images,
     loaded,
-    actions
+    ...actions
   }
 }
