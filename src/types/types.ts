@@ -1,6 +1,9 @@
 export type ImageType = {
   id: number
+  albumId: number
+  title: string
   url: string
+  thumbnailUrl: string
 }
 
 export type ImageData = Partial<ImageType>
