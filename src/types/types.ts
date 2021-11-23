@@ -22,14 +22,14 @@ export type ViewModel = {
   loaded: boolean
 } & ViewModelActions
 
-export type IconButtonVariant = 'grey' | 'primary' | 'danger';
+export type FilledButtonVariant = 'grey' | 'primary' | 'danger';
 
-export type IconButtonVariantColorsType = {
+export type FilledButtonVariantColorsType = {
   grey: '#616161'
   danger: '#EF5350'
   primary: '#42A5F5'
 }
 
-export type IconButtonTheme = {
-  color: IconButtonVariant
+export type FilledButtonTheme = {
+  color: FilledButtonVariant
 }

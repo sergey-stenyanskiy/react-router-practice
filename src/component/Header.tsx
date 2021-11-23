@@ -4,7 +4,7 @@ import { ReactComponent as Key } from '../assets/icons/key.svg'
 
 import { primary } from '../appTheme'
 
-import IconButton from './IconButton'
+import FilledButton from './FilledButton'
 import Navigation from './Navigation'
 
 import styled from 'styled-components'
@@ -19,15 +19,27 @@ align-items: center;
 
 const StyledKey = styled(Key)`
 fill: currentColor;
-width: 28px;
-height: 28px;
+width: 20px;
+height: 20px;
+`;
+
+type HorizontalSpacingProps = {
+  spacing?: number;
+}
+
+const HorizontalSpacing = styled.div`
+margin-right: ${({ spacing = 1 } : HorizontalSpacingProps) => `${spacing * 8}px`};
 `;
 
 export default () => {
   return (
     <Header>
       <Navigation />
-      <IconButton type="button" theme={primary} icon={<StyledKey />} />
+      <FilledButton type="button" theme={primary}>
+        <StyledKey />
+        <HorizontalSpacing />
+        Log in
+      </FilledButton>
     </Header>
   )
 }
