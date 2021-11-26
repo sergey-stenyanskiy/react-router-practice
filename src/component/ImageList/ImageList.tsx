@@ -14,6 +14,6 @@ export default ({
   images
 }: ImageListProps) => (
   <ImageList>
-    {images.map((image) => <ImageLink image={image} />)}
+    {images.map((image) => <ImageLink image={image} key={image.id} />)}
   </ImageList>
 )
