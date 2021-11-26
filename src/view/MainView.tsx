@@ -26,7 +26,11 @@ margin-top: 16px;
 `;
 
 export default () => {
-  const viewModel = useViewModel();
+  const viewModel = useViewModel({
+    initialState: [],
+    url: 'https://jsonplaceholder.typicode.com/photos'
+  });
+
   const login = useLogin(false);
 
   const { fetchImages } = viewModel;

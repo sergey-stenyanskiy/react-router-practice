@@ -4,12 +4,20 @@ import { ImageType, ImageData, ViewModel, ViewModelState, ViewModelActions } fro
 
 import axios from 'axios'
 
-export default function useViewModel(initialState: ViewModelState = []): ViewModel {
+type ViewModelOptions = {
+  initialState: ViewModelState
+  url: string
+}
+
+export default function useViewModel({
+  initialState,
+  url
+}: ViewModelOptions): ViewModel {
   const [images, setImages] = useState(initialState);
   const [loaded, setLoaded] = useState(false);
 
   const fetchImages = useCallback(async () => {
-    const res = await axios.get('https://jsonplaceholder.typicode.com/photos', {
+    const res = await axios.get(url, {
       headers: {
         'content-type': 'application/json'
       }
