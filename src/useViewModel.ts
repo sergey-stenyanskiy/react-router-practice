@@ -4,7 +4,6 @@ import { ImageType, ImageData, ViewModel, ViewModelState, ViewModelActions } fro
 
 import axios from 'axios'
 
-// TODO перенести в отдельную папку hooks
 export default function useViewModel(initialState: ViewModelState = []): ViewModel {
   const [images, setImages] = useState(initialState);
   const [loaded, setLoaded] = useState(false);
