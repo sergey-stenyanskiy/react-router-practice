@@ -8,12 +8,14 @@ type HomeProps = {
   viewModel: ViewModel
 }
 
+const NUM_DISPLAYED_ITEMS = 10;
+
 export default ({
   viewModel
 }: HomeProps) => {
   const { images, loaded } = viewModel;
 
-  const content = loaded ? images.slice(0, 10) : [];
+  const content = loaded ? images.slice(0, NUM_DISPLAYED_ITEMS) : [];
 
   return (
     <ImageList images={content} />
