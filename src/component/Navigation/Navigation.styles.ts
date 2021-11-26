@@ -1,12 +1,10 @@
-import React from 'react'
-
 import {
   NavLink
 } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-const Navigation = styled.nav`
+export const Navigation = styled.nav`
 color: black;
 
 display: flex;
@@ -19,7 +17,7 @@ font-size: 1.05em;
 line-height: 1.8em;
 `;
 
-const StyledLink = styled(NavLink)`
+export const StyledLink = styled(NavLink)`
 display: block;
 color: black;
 text-decoration: none;
@@ -45,24 +43,10 @@ transition: box-shadow, 0.1s linear;
 }
 `;
 
-type HorizontalSpacingProps = {
+export type HorizontalSpacingProps = {
   spacing?: number;
 }
 
-const HorizontalSpacing = styled.div`
+export const HorizontalSpacing = styled.div`
 margin-right: ${({ spacing = 1 } : HorizontalSpacingProps) => `${spacing * 8}px`};
 `;
-
-export default () => {
-  return (
-    <Navigation>
-      <StyledLink to="/">Home</StyledLink>
-      <HorizontalSpacing />
-      <StyledLink to="/images/1">Image Info Page</StyledLink>
-      <HorizontalSpacing />
-      <StyledLink to="/sensitive-content">Private Page</StyledLink>
-      <HorizontalSpacing />
-      <StyledLink to="/not-found">404</StyledLink>
-    </Navigation>
-  )
-}

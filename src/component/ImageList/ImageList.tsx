@@ -1,16 +1,10 @@
 import React from 'react'
 
-import { ImageType } from '../types/types'
+import { ImageType } from '../../types/types'
 
-import ImageLink from './ImageLink'
+import ImageLink from '../ImageLink/ImageLink'
 
-import styled from 'styled-components'
-
-const ImageList = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-`;
+import { ImageList } from './ImageList.styles'
 
 type ImageListProps = {
   images: ImageType[]

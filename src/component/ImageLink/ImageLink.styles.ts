@@ -1,19 +1,12 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
-
-import { Link } from 'react-router-dom'
-import { ImageType } from '../types/types';
-
-type ImageProps = {
-  image: ImageType
-}
 
 type ImageStyleProps = {
   url: string
 }
 
-const ButtonMore = styled.button`
+export const ButtonMore = styled.button`
 position: absolute;
 z-index: 100;
 cursor: pointer;
@@ -28,7 +21,7 @@ font-family: arial;
 padding: 6px 18px;
 `;
 
-const ImageLink = styled(Link)`
+export const ImageLink = styled(Link)`
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -47,19 +40,8 @@ ${ButtonMore} {
 }
 `;
 
-const Image = styled.div`
+export const Image = styled.div`
 width: 100%;
 height: 200px;
 background: url(${(props: ImageStyleProps) => props.url});
 `;
-
-export default ({
-  image
-}: ImageProps) => (
-  <ImageLink to={`/images/${image.id}`}>
-    <Image url={image.url} />
-    <ButtonMore type="button">
-      More
-    </ButtonMore>
-  </ImageLink>
-)

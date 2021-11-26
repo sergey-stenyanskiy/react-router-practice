@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ViewModel } from '../types/types'
 
-import ImageList from '../component/ImageList'
+import ImageList from '../component/ImageList/ImageList'
 
 type HomeProps = {
   viewModel: ViewModel

@@ -8,22 +8,18 @@ import {
   Routes,
 } from 'react-router-dom'
 
-import useViewModel from '../useViewModel'
-import useLogin from '../hook/useLogin'
+import useViewModel from '../../useViewModel'
+import useLogin from '../../hook/useLogin'
 
-import LoginGuard from '../component/LoginGuard'
-import Header from '../component/Header'
+import LoginGuard from '../../component/LoginGuard'
+import Header from '../../component/Header/Header'
 
-import Home from './Home'
-import ImageInfo from './ImageInfo'
-import PrivatePage from './PrivatePage'
-import NotFound from './NotFound'
+import Home from '../Home'
+import ImageInfo from '../ImageInfo/ImageInfo'
+import PrivatePage from '../PrivatePage'
+import NotFound from '../NotFound'
 
-import styled from 'styled-components'
-
-const Main = styled.main`
-margin-top: 16px;
-`;
+import { Main } from './MainView.styles'
 
 export default () => {
   const viewModel = useViewModel({

@@ -4,15 +4,9 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom'
 
-import MainView from './view/MainView'
+import MainView from './view/MainView/MainView'
 
-import styled from 'styled-components'
-
-const App = styled.div`
-width: 960px;
-margin: auto;
-font-family: arial;
-`;
+import { App } from './App.styles'
 
 export default () => {
   return (
