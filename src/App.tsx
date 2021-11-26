@@ -4,10 +4,16 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom'
 
-import MainView from './view/MainView'
+import MainView from './view/MainView/MainView'
 
-export default () => (
-  <Router>
-    <MainView />
-  </Router>
-)
+import { App } from './App.styles'
+
+export default () => {
+  return (
+    <App>
+      <Router>
+        <MainView />
+      </Router>
+    </App>
+  )
+}
