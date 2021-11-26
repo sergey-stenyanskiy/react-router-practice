@@ -26,7 +26,7 @@ export default function useViewModel({
     setImages(res.data);
 
     setLoaded(true);
-  }, []);
+  }, [url]);
 
   const setImage = useCallback((id: number, data: ImageData) => {
     setImages((imgs) => {
